@@ -1,0 +1,189 @@
+@import url("https://db.onlinewebfonts.com/c/97c4b25dc74e0ab045154e75a8fdd69d?family=Game+of+Thrones");
+@import url("http://fonts.cdnfonts.com/css/roboto");
+
+body {
+  font-family: "Game of Thrones", serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+}
+
+/* Main map / characters ---------------------------------------*/
+.section__map {
+  height: 100vh;
+  width: 100%;
+  background-image: url(./assets/site/mapblue.jpg);
+  object-fit: fill;
+  align-self: flex-start;
+}
+
+.container__characters {
+  display: inline-grid;
+  width: 100%;
+  height: 100%;
+  grid-template: repeat(6, auto) / repeat(8, auto);
+  grid-gap: 20px;
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+}
+
+.img_content {
+  width: 75px;
+  height: 75px;
+  align-self: center;
+  justify-self: center;
+  border: 2px solid rgba(11, 211, 237, 0);
+  border-radius: 50%;
+}
+
+.img_content:hover {
+  animation: hovering 1s infinite;
+}
+
+.char_name {
+  font-size: 0.6em;
+  align-self: center;
+  justify-self: center;
+}
+
+/* Sidebar elements -----------------------------------------*/
+.section__sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 400px;
+  gap: 20px;
+  background-color: rgb(70, 70, 70);
+  /*flex-shrink: 4;*/
+  align-self: flex-start;
+  color: white;
+}
+
+.header {
+  font-size: 120%;
+  align-self: flex-start;
+  justify-self: center;
+  width: 100%;
+  padding-top: 30px;
+}
+
+.information__character {
+  display: flex;
+  color: white;
+  flex-direction: column;
+  align-self: center;
+  justify-self: flex-start;
+  width: 90%;
+  gap: 10px;
+}
+
+.image__character {
+  object-fit: fill;
+}
+
+.bio__character {
+  font-family: "Roboto", sans-serif;
+  text-align: justify;
+}
+
+.badge__character {
+  width: 20px;
+  align-self: center;
+}
+
+.footer {
+  align-self: center;
+  justify-self: flex-end;
+  margin-top: auto;
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchbar {
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+  gap: 5px;
+}
+
+.search {
+  font-size: 150%;
+  border: none;
+  border-radius: 5px;
+}
+
+.input {
+  display: flex;
+  border: none;
+  border-radius: 5px;
+  font-family: "Game of Thrones", serif;
+  font-size: 70%;
+  width: 100%;
+  padding: 5px;
+  outline: none;
+}
+
+.notFound {
+  font-size: 0.8em;
+  padding: 20px;
+}
+
+/* Animations -------------------------------------------*/
+.selected {
+  animation: selected 2s infinite;
+}
+
+@keyframes selected {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.02;
+    border: 2px solid rgba(11, 211, 237, 100);
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+@keyframes hovering {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.02;
+    border: 2px solid rgba(255, 0, 0, 100);
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+/* Mobile screen responsive design (scrollable) */
+
+@media only screen and (max-width: 1050px) {
+  html::-webkit-scrollbar {
+    display: none;
+  }
+
+  .container__characters {
+    grid-template: repeat(12, auto) / repeat(4, auto);
+  }
+
+  .section__sidebar {
+    width: 300px;
+    height: 200%;
+  }
+
+  .section__map {
+    height: 200%;
+  }
+}

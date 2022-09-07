@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./fonts/font-awesome-4.7.0/css/font-awesome.min.css"/>
+    <title>Game Of Thrones</title>
+  </head>
+  <body>
+    <div class="section__map">
+      <div class="container__characters"></div>
+    </div>
+    <div class="section__sidebar">
+      <div class="header">Game Of Thrones</div>
+      <div class="information__character">
+        <img width="100%" class="img__character" src="" />
+        <div class="name__character"></div>
+        <img class="badge__character" src="" />
+        <div class="bio__character"></div>
+      </div>
+      <div class="footer">
+        <div class="searchbar">
+          <button class="search">
+            <i class="fa fa-snowflake-o" aria-hidden="true"></i>
+          </button>
+          <input
+            class="input"
+            type="text"
+            placeholder="Search for a character..."
+          />
+        </div>
+        <div class="notFound"></div>
+      </div>
+    </div>
+
+    <script type="module" src="./js/got.js"></script>
+  </body>
+</html>
